@@ -7,7 +7,7 @@ export default class UserService{
         return await User.create(user);
     }
     public static async login(email:string,password:string):Promise<string>{
-        const user:IUser|null= await User.findOne({email});
+        const user:IUser|null= await User.findOne({email}).select('+password');
 
         if(!user){
             throw new Error('user not exist');

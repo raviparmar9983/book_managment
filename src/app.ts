@@ -9,7 +9,7 @@ const app:Express=express();
 
 app.use(express.json())
 
-app.use('/library/admin',adminRoutes)
+
 app.use('/library/user',userRoutes)
 app.use('/library/book',bookRoutes)
 app.use('/library/author',authorRoutes)
