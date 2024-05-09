@@ -4,7 +4,7 @@ import AuthorService from "../services/authorServices";
 import { Request,Response } from "express";
 
 class AuthorController{
-    public async createBook(req:Request,res:Response):Promise<void>{
+    public async creatAuthor(req:Request,res:Response):Promise<void>{
         try{
             const newBook:IAuthor=await AuthorService.createAuthor(req.body)
             res.status(200).json({
@@ -18,7 +18,7 @@ class AuthorController{
             })
         }
     }
-    public async getAllBook(req:Request,res:Response):Promise<void>{
+    public async getAllAuthor(req:Request,res:Response):Promise<void>{
   
         try{
             const newBook:IAuthor[]| IAuthor=await AuthorService.gelAllAuthor()
@@ -33,7 +33,7 @@ class AuthorController{
             })
         }
     }
-    public async updateBook(req:Request,res:Response):Promise<void>{
+    public async updateAuthor(req:Request,res:Response):Promise<void>{
 
         try{
             const newBook:IAuthor=await AuthorService.updateAuthor(req.params.id,req.body)
@@ -48,7 +48,7 @@ class AuthorController{
             })
         }
     }
-    public async deleteBook(req:Request,res:Response):Promise<void>{
+    public async deleteAuthor(req:Request,res:Response):Promise<void>{
 
         try{
             const newBook:any=await AuthorService.deleteAuthor(req.params.id)
@@ -64,6 +64,4 @@ class AuthorController{
         }
     }
 }
-
-
 export default new AuthorController();
